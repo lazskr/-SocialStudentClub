@@ -20,6 +20,7 @@
 * Manage Clubs.
 * Sign-up other Admins. 
 
+**Programming languages & technologies used:**
 * All users can link their Google account as a method for logging into the website via an established server-side connection with Google Cloud’s API.
 * User’s who are not logged into the website may still view all the clubs and their associated information from the home page.
 * HTML and CSS were used for the frontend of the website to provide page structure and styling respectively. JavaScript, specifically, Vue.js 2 (JavaScript library) was used for the front-friend to provide dynamic content. Utilizing Vue.js enabled for protection against Cross-Site Scripting attacks (XXS). 
