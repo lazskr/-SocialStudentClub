@@ -1,4 +1,4 @@
-**Users can sign up and become members of the social student club website where they can: **
+**Users can sign up and become members of the social student club website where they can:**
 * Sign up/login.
 * Manage their user information. 
 * Join a club.
