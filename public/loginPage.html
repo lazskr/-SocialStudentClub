@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>MYclubs Homepage</title>
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src = "/javascripts/website.js" defer></script>
+    </head>
+    <body>
+        <div class="menuBar">
+            <a href="homePage.html"><img src="clublogo.png" alt="MYclubs Logo"></a>
+            <div id = "three">
+                <a href="loginPage.html">Login</a>
+                <a href="homePage.html">Home</a>
+            </div>
+        </div>
+    <div id = "login_and_sign">
+        <div class="user_login" v-if="login === true">
+            <h3> Login </h3>
+            <input class = "form_text" type = "text" v-model="Username_login" placeholder="Username"/>
+            <br>
+            <br>
+            <input class = "form_text" v-if="Show_Password === false"  v-model="Password_login" type = "text" placeholder="Password"/>
+            <input class = "form_text" v-else type = "password" v-model="Password_login" placeholder="Password"/>
+            <a ></a>
+            <br>
+            <br>
+            <input type = "checkbox" v-on:click="toggle"> Show Password
+            <br>
+            <br>
+            <a v-on:click="login_user()"><p class = "buttons">Login</p></a>
+            <h3> or </h3>
+            <a v-on:click="login = false"><p class = "buttons">Sign up</p></a>
+            <p> or Sign-Up/Login using: </p>
+
+            <!-- Google signup -->
+            <div id = "google">
+                <div id="g_id_onload"
+                    data-client_id="989015259007-9tdrv6j1vtb0bb5jbuduo8v70dqgoeco.apps.googleusercontent.com"
+                    data-context="signin"
+                    data-ux_mode="popup"
+                    data-callback="login_with_google"
+                    data-auto_prompt="false">
+                </div>
+                <div class="g_id_signin"
+                    data-type="standard"
+                    data-shape="pill"
+                    data-theme="outline"
+                    data-text="signin_with"
+                    data-size="large"
+                    data-logo_alignment="center">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="user_login" v-else>
+            <p> Please enter your username &#40this must be unique and cannot be changed later&#41:</p>
+            <input id = "sign-user" class = "form_text" type = "text" v-model = "New_username" placeholder="Username"/>
+            <p> Please enter your Email:</p>
+            <input id = "sign-email" class = "form_text" type = "text" v-model = "New_email" placeholder="Email"/>
+            <p> Please enter your Password:</p>
+            <input id = "sign-pass" class = "form_text" type = "text" v-model = "New_password" placeholder="Password"/>
+            <p> Please re-enter your Password:</p>
+            <input id = "sign-confirm" class = "form_text" type = "text" v-model = "New_password_confirm" placeholder="Password"/>
+            <p> Please enter your first name: </p>
+            <input id = "sign-first" class = "form_text" type = "text" v-model = "New_first_name" placeholder="First name"/>
+            <p> Please enter your last name: </p>
+            <input id = "sign-last" class = "form_text" type = "text" v-model = "New_last_name" placeholder="Last name"/>
+            <br>
+            <br>
+            <div class = "buttons" v-on:click="login = true"><p class = "buttons">Back</p></div>
+            <br>
+            <a class = "buttons" v-on:click="signup()"><p class = "buttons">Create account</p></a>
+        </div>
+    </div>
+    </body>
+</html>

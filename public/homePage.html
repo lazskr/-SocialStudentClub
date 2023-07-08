@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>MYclubs Homepage</title>
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src = "/javascripts/website.js" defer></script>
+    </head>
+    <body>
+    <div id="home">
+        <div class="menuBar">
+            <a href="homePage.html"><img src="clublogo.png" alt="MYclubs Logo"></a>
+
+
+            <div id = "three" v-if="user_status === true">
+                <a href="createclubPage.html">Create club</a>
+                <a href="profilePage.html">MyProfile</a>
+                <a href="clubManager.html">MyClub</a>
+                <a href="homePage.html">Home</a>
+                <a href="homePage.html" v-on:click="loggingout()">Logout</a>
+        </div>
+        <div id = "lonely_a" v-else>
+            <a href="loginPage.html">Login</a>
+            <a href="homePage.html">Home</a>
+        </div>
+
+        </div>
+        <div class="content">
+            <img id="headerImage" src="image-placeholder.jpg" alt="Display Image">
+            <div id = "main_text">
+            <h1>CONNECT WITH YOUR INTERESTS! CHECK OUT THE CLUBS BELOW!</h1>
+            <h3>Welcome to MYclubs, a place for you to discover, join and interact with clubs spanning a variety of interests and hobbies or even start your own! MYclubs offers </h3>
+                <p>1. Create an Account or Login</p>
+                <p>2. Explore our Clubs and Join One or Create your Own</p>
+                <p>3. View Clubs Updates and RSVP to Attend an Event</p>
+                <p>4. Subscribe to our Emailing list</p>
+                <p> See all of our clubs below: </p>
+            </div>
+        </div>
+        <div>
+            <div class="clubBox" v-for="club in club_names">
+              <h2><a href="clubPage.html" v-on:click.prevent="get_posts_4clubpage(club.Club_name); get_events_4clubpage(club.Club_name); get_clubinfo(club.Club_name)">{{club.Club_name}}</a></h2>
+              <!-- we can call multiple functions here that will also get the events and posts of the club, just do a ;anotherfunction() -->
+            </div>
+          </div>
+    </div>
+    <!-- home content ends here -->
+    </body>
+</html>

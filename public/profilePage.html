@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>MYclubs Homepage</title>
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src = "/javascripts/website.js" defer></script>
+    </head>
+    <body>
+        <!-- add home back after -->
+        <div id = "home">
+            <div class="menuBar">
+                <a href="homePage.html"><img src="clublogo.png" alt="MYclubs Logo"></a>
+
+
+                <div id = "three" v-if="user_status === true">
+                    <a href="createclubPage.html">Create club</a>
+                    <a href="profilePage.html">MyProfile</a>
+                    <a href="clubManager.html">MyClub</a>
+                    <a href="homePage.html">Home</a>
+                    <a href="homePage.html" v-on:click="loggingout()">Logout</a>
+                </div>
+                <div id = "lonely_a" v-else>
+                    <a href="loginPage.html">Login</a>
+                    <a href="homePage.html">Home</a>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="content" id = "profile">
+
+            <h1>{{username}}'s Profile </h1>
+            <div v-if="edit === false">
+                <button id = "edit_button" type="button" v-on:click="edit = true">Edit User Details</button>
+                <h3>First name: {{firstname}}</h3>
+                <h3>Last name: {{lastname}}</h3>
+                <h3 >Email: {{email}}</h3>
+                <br>
+                <h2>Upcoming club events:</h2>
+                <br>
+                <h2>Posts from your Club's: </h2>
+
+
+            </div>
+            <div v-else>
+                <p>Edit your personal details and click Exit when finished.</p>
+                <button id = "exit_button" type="button" v-on:click="change_details(); edit = false">Exit</button>
+                <br>
+                <br>
+                <input type="text" v-model="firstname" placeholder="myvue.firstname"/>
+                <br>
+                <br>
+                <input type="text" v-model="lastname" placeholder="myvue.lastname"/>
+                <br>
+            </div>
+
+        </div>
+    </body>
+</html>

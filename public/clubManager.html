@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>MYclubs Homepage</title>
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src = "/javascripts/website.js" defer></script>
+    </head>
+    <body>
+    <div id="home">
+        <div class="menuBar">
+            <a href="homePage.html"><img src="clublogo.png" alt="MYclubs Logo"></a>
+
+
+            <div id = "three" v-if="user_status === true">
+                <a href="createclubPage.html">Create club</a>
+                <a href="profilePage.html">MyProfile</a>
+                <a href="clubManager.html">MyClub</a>
+                <a href="homePage.html">Home</a>
+                <a href="homePage.html" v-on:click="loggingout()">Logout</a>
+            </div>
+            <div id = "lonely_a" v-else>
+                <a href="loginPage.html">Login</a>
+                <a href="homePage.html">Home</a>
+            </div>
+
+
+        </div>
+    </div>
+
+        <div id = "clubmanager">
+            <div class="content" v-if="club_manager_exists === true">
+                <h1>Your club: {{my_club_name}}</h1>
+                <p>Club manager can view their users, make events, send emails and make posts </p>
+
+                <button type="button" v-on:click="get_club_users()">Show signed up users</button>
+                <div v-for="user in users">
+                    <ul>
+                        <li>{{user.Username}}</li>
+                    </ul>
+                </div>
+
+
+            </div>
+            <h1 v-else> You are not a club manager. Therefore, you cannot access this page. </h1>
+        </div>
+
+
+    </body>
+</html>

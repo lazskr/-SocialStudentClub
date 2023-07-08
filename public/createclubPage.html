@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>MYclubs Homepage</title>
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src = "/javascripts/website.js" defer></script>
+    </head>
+    <body>
+        <div id="home">
+            <div class="menuBar">
+                <a href="homePage.html"><img src="clublogo.png" alt="MYclubs Logo"></a>
+
+
+                <div id = "three" v-if="user_status === true">
+                    <a href="createclubPage.html">Create club</a>
+                    <a href="profilePage.html">MyProfile</a>
+                    <a href="clubManager.html">MyClub</a>
+                    <a href="homePage.html">Home</a>
+                    <a href="homePage.html" v-on:click="loggingout()">Logout</a>
+                </div>
+                <div id = "lonely_a" v-else>
+                    <a href="loginPage.html">Login</a>
+                    <a href="homePage.html">Home</a>
+                </div>
+
+
+            </div>
+        </div>
+        <div id="create">
+            <h1> ✪ Create your club ✪ </h1>
+            <p> Only 1 club can be made per account. </p>
+            <p>Enter your club's name: </p>
+            <input type="text" class = "place" v-model="club_name" placeholder="club name">
+            <p>Provide a description for your club: </p>
+            <input type="text" class = "place" v-model="club_description" placeholder="club description">
+            <br>
+            <br>
+            <p>Provide the founding year for your club: </p>
+            <input type="text" class = "place" v-model="club_year" placeholder="founding year">
+            <br>
+            <br>
+
+            <p>Please upload an image which will be used as the club's logo: </p>
+            <form action = '/upload' method = "post" enctype = "multipart/form-data">
+                <input type="file" name="file"/>
+                <input type="submit"/>
+            </form>
+
+            <br>
+            <br>
+
+            <button type="button" class = "button_create" v-on:click="make_club()">Submit</button>
+        </div>
+    </body>
+</html>
