@@ -5,7 +5,7 @@
 * View updates from clubs they’re members of.
 * See upcoming club events and RSVP. 
 
-**Users can make a club and become club managers and be able to: **
+**Users can make a club and become club managers and be able to:**
 * Sign up/log in. 
 * Manage their user information.
 * View their members. 
@@ -14,7 +14,7 @@
 * See who has RVSP’d for an event. 
 * Can sign up to receive email notifications from clubs for updates and special events.
 
-**System admins exist on the website and can: **
+**System admins exist on the website and can:**
 * Manage their user information.
 * Manage Users.
 * Manage Clubs.
