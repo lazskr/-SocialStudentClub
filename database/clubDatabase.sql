@@ -3,8 +3,6 @@
 --Added a password table as a user who signs up with google with not have a password (just emal, first_name, last_name and password,
 --whilst user_type will be default as "user" and username will be generated as first_name+last_name as default (can be changed later))
 --user_id has been removed and replaced by username as the primary key for User
---password was removed as
-
 
 SET FOREIGN_KEY_CHECKS=0; --I set it to this
 SET FOREIGN_KEY_CHECKS=1; --do this for final version
