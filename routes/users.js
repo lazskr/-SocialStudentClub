@@ -24,32 +24,6 @@ router.use('*', function (req, res, next) {
 
 
 
-// GETTING CLUB POSTs ROUTER for user's clubs (for myprofile)
-
-// GETTING CLUB RSVPs ROUTER  for user's rsvps(for myprofile)
-
-// GETTING CLUB EVENTS ROUTER for user's club events (for myprofile)
-
-
-
-// JOINING A CLUB router (on the page when user is logged in) -
-// user_status in #home vue states whether they are logged in; for clubPage)
-
-// RSVPing ROUTER (on the page when the user is logged in for clubPage)
-
-// ACCEPTING TO RECIEVE EMAILS (on the club page when the user is logged in for clubPage)
-
-
-
-// MAKING A CLUB EVENT ROUTER (on clubManager.html)
-
-// MAKING CLUB POST ROUTER (on clubManager.html)
-
-// MAKING AND SENDING EMAIL (on club Manager.html)
-
-
-
-
 // RETURNING ALL SIGNED UP USERS (on clubManager.html)
 router.post('/return_club_users', function(req,res,next) {
   req.pool.getConnection(function(err1, connection){
